@@ -7,6 +7,8 @@ import os
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 TEMPLATE_DIR = os.path.join(BASE_DIR,'templates')
 STATIC_DIR = os.path.join(BASE_DIR,'static')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+
 
 env = environ.Env(
     DEBUG=(bool, False)
@@ -37,7 +39,9 @@ INSTALLED_APPS = [
     'allauth.account',
     'allauth.socialaccount',
     'apps.user_profile.apps.UserProfileConfig',
+    'apps.visits.apps.VisitsConfig',
 ]
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -135,3 +139,5 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 STATICFILES_DIRS = [STATIC_DIR,]
+
+MEDIA_URL = '/media/'
